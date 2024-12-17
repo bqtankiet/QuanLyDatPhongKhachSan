@@ -1,0 +1,29 @@
+ 
+# Bỏ qua thư mục .vs của Visual Studio
+.vs/
+
+# Bỏ qua các tệp liên quan đến IntelliSense và chỉ mục
+*.vsidx
+*.db-shm
+*.db-wal
+
+# Bỏ qua các tệp khác không cần thiết
+*.obj
+*.exe
+*.log
+*.user
+*.suo
+*.pdb
+*.ipch
+
+# Bỏ qua thư mục bin và obj
+bin/
+obj/
+
+# Bỏ qua tệp biên dịch và tạm
+*.exe
+*.pdb
+*.cache
+*.g.resources
+*.baml
+*.csproj.FileListAbsolute.txt
