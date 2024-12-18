@@ -46,6 +46,37 @@
                 CornerRadius="0,20,20,20">
 
                 <StackPanel>
+                    <!-- trang chủ-->
+                    <Button
+                        Width="199"
+                        Margin="0,20,0,0"
+                        HorizontalAlignment="Left"
+                        materialDesign:ButtonAssist.CornerRadius="15"
+                        Command="{Binding SwitchViewCommand}"
+                        CommandParameter="Reservation"
+                        FontWeight="Medium"
+                        Foreground="Black"
+                        Style="{StaticResource MaterialDesignFlatButton}">
+
+                        <StackPanel
+                            Margin="-90,0,0,0"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+                            <materialDesign:PackIcon
+                                Width="25"
+                                Height="25"
+                                Margin="1,0,0,0"
+                                VerticalAlignment="Center"
+                                Kind="Home" />
+                            <TextBlock
+                                Margin="9,0,0,0"
+                                VerticalAlignment="Center"
+                                FontSize="15"
+                                FontWeight="SemiBold"
+                                Text="Trang chủ" />
+                        </StackPanel>
+                    </Button>
+                    
                     <Button
                         Width="199"
                         Margin="0,20,0,0"
@@ -62,7 +93,7 @@
                             VerticalAlignment="Center"
                             Orientation="Horizontal">
                             <materialDesign:PackIcon
-                                Kind="Home" 
+                                Kind="HomeEdit" 
                                 Width="25"
                                 Height="25"
                                 Margin="-2,0,0,0"
@@ -77,40 +108,12 @@
     
                     </Button>
 
-                    <Button
-                        Width="199"
-                        Margin="0,20,0,0"
-                        HorizontalAlignment="Left"
-                        materialDesign:ButtonAssist.CornerRadius="15"
-                        Command="{Binding SwitchViewCommand}"
-                        CommandParameter="Reservation"
-                        FontWeight="Medium"
-                        Foreground="Black"
-                        Style="{StaticResource MaterialDesignFlatButton}">
-
-                        <StackPanel
-                            Margin="-80,0,0,0"
-                            VerticalAlignment="Center"
-                            Orientation="Horizontal">
-                            <materialDesign:PackIcon
-                                Width="25"
-                                Height="25"
-                                Margin="1,0,0,0"
-                                VerticalAlignment="Center"
-                                Kind="Door" />
-                            <TextBlock
-                                Margin="9,0,0,0"
-                                VerticalAlignment="Center"
-                                FontSize="15"
-                                FontWeight="SemiBold"
-                                Text="Đặt phòng" />
-                        </StackPanel>
-                    </Button>
+                    
 
                     <!--  Quản lí dịch vụ  -->
                     <Button
                         Width="199"
-                        Margin="0,20,0,0"
+                        Margin="-2,20,0,0"
                         HorizontalAlignment="Left"
                         materialDesign:ButtonAssist.CornerRadius="15"
                         Command="{Binding SwitchViewCommand}"
@@ -143,7 +146,7 @@
                     <!--  Quản lý khách hàng  -->
                     <Button 
                         Width="199"
-                        Margin="3,20,0,0"
+                        Margin="0,20,0,0"
                         HorizontalAlignment="Left"
                         Background="Transparent"
                         BorderThickness="0"
@@ -173,7 +176,7 @@
                     <!-- Thống kê -->
                     <Button 
                         Width="199"
-                        Margin="3,20,0,0"
+                        Margin="2,20,0,0"
                         HorizontalAlignment="Left"
                         Background="Transparent"
                         BorderThickness="0"
@@ -242,7 +245,7 @@
                         Style="{StaticResource MaterialDesignFlatButton}"
                         materialDesign:ButtonAssist.CornerRadius="15">
                         <StackPanel
-                            Margin="-10,0,0,0"
+                            Margin="-15,0,0,0"
                             VerticalAlignment="Center"
                             Orientation="Horizontal">
                             <materialDesign:PackIcon
@@ -272,7 +275,7 @@
                             Style="{StaticResource MaterialDesignFlatButton}"
                             materialDesign:ButtonAssist.CornerRadius="15">
                         <StackPanel
-                            Margin="-27,0,62,0"
+                            Margin="-30,0,62,0"
                             VerticalAlignment="Center"
                             Orientation="Horizontal">
                             <materialDesign:PackIcon
@@ -291,7 +294,7 @@
                     <!--  Log out  -->
                     <Button
                         Width="199"
-                        Margin="0,20,0,0"
+                        Margin="-1,20,0,0"
                         HorizontalAlignment="Left"
                         Background="Transparent"
                         BorderThickness="0"

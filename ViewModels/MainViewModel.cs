@@ -14,12 +14,6 @@ namespace QLKS_CK.ViewModels
 {
     public class MainViewModel : BaseViewModel
     {
-        
-        public ObservableCollection<Room> RoomList
-        {
-            get { return RoomList; }
-            set { RoomList = value; OnPropertyChanged(); }
-        }
 
         private object currentView;
 		public object CurrentView
@@ -35,7 +29,7 @@ namespace QLKS_CK.ViewModels
 
         public MainViewModel()
         {
-            CurrentView = new StatisticsView(); 
+            CurrentView = new ReservationView(); 
             SwitchViewCommand = new RelayCommand(SwitchView);
         }
 
