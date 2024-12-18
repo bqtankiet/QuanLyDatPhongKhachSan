@@ -4,9 +4,177 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:QLKS_CK.Views.ReservationView"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:reservation="clr-namespace:QLKS_CK.ViewModels.Reservation" d:DataContext="{d:DesignInstance Type=reservation:ReservationViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="648" d:DesignWidth="1000">
     <Grid Background="#F5F5F5">
-        <TextBlock Text="Test Content Đặt phòng View" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"></TextBlock>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width ="7*"/>
+            <ColumnDefinition Width ="3*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <Grid Grid.Column ="0">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <ItemsControl ItemsSource="{Binding RoomList}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Canvas Width="115" Height="115" Margin="10">
+                                <Canvas.Style>
+                                    <Style TargetType="Canvas">
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="LightGray"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Canvas.Style>
+                                <Image Source="/resource/free_room.png"
+                                   Height="90"
+                                   Width="90"
+                                   Canvas.Left="12.5"
+                                   Canvas.Top="10"/>
+                                <TextBlock Text="{Binding RoomNumber}"
+                                   FontSize="8"
+                                   Foreground="Black"
+                                   Width="115"
+                                   Canvas.Top="30"
+                                   TextAlignment="Center"/>
+                                <TextBlock Text="{Binding RoomType}"
+                                   FontSize="14"
+                                   Foreground="Black"
+                                   Width="115"
+                                   Canvas.Bottom="0"
+                                   TextAlignment="Center"/>
+                            </Canvas>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+
+            </ScrollViewer>
+
+        </Grid>
+
+        <Grid Grid.Column="1" Background="#FEFDEB">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="5*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Text="Thông tin phòng" Foreground="#BD8722"
+                           FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <StackPanel Grid.Row="1" Orientation="Horizontal">
+                    <TextBlock Text="Số phòng: " Margin="20,0" Foreground="#37C467"
+                               FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
+                    <TextBlock Text="100 " FontSize="18" VerticalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Grid.Row="2" Orientation="Horizontal">
+                    <TextBlock Text="Loại phòng: " Margin="20,0" Foreground="#37C467"
+                               FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
+                    <TextBlock Text="Phòng đơn " FontSize="18" VerticalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Grid.Row="3" Orientation="Horizontal">
+                    <TextBlock Text="Sức chứa: " Margin="20,0" Foreground="#37C467"
+                               FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
+                    <TextBlock Text="2 " FontSize="18" VerticalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Grid.Row="4" Orientation="Horizontal">
+                    <TextBlock Text="Giá tiền: " Margin="20,0" Foreground="#37C467"
+                FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
+                    <TextBlock Text="200.000 VND" FontSize="18" VerticalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Grid.Row="5" Orientation="Horizontal">
+                    <TextBlock Text="Trạng thái: " Margin="20,0" Foreground="#37C467"
+                               FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
+                    <TextBlock Text="Trống" FontSize="18" VerticalAlignment="Center"/>
+                </StackPanel>
+
+            </Grid>
+            
+            <Border BorderBrush="Gray" BorderThickness="0,1,0,1" />
+            
+            <Button
+                Grid.Row="1"
+                HorizontalAlignment="Left"
+                Background="Transparent"
+                BorderBrush="Transparent">
+                <StackPanel Orientation="Horizontal">
+                    <Label Padding="0"
+                       Foreground="#BD8722"
+                       FontSize="18"
+                       Content="Chọn dịch vụ"
+                       VerticalAlignment="Center" />
+                    <materialDesign:PackIcon VerticalAlignment="Center"
+                         Kind="ChevronRight"
+                         Height="Auto"
+                         Width="Auto"
+                         Foreground="#BD8722"
+                         RenderTransformOrigin="0.323,0.538" />
+                </StackPanel>
+                
+            </Button>
+
+            <Border BorderBrush="Gray" Grid.Row="3" BorderThickness="0,1,0,1">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Tổng tiền: "
+                            FontSize="14"
+                            FontWeight="Bold"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Foreground="Red"
+                            Margin="20,0"/>
+
+                    <TextBlock Text="200000 VND"
+                            FontSize="22"
+                            FontWeight="DemiBold"
+                            FontStyle="Italic"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            TextAlignment="Center"
+                            Foreground="#BD8722"
+                            Margin="50 -5 10 0"/>
+
+                </StackPanel>
+            </Border>
+            
+            <Grid Grid.Row="4">
+                <Button Style="{StaticResource MaterialDesignRaisedButton}"
+                ToolTip="MaterialDesignRaisedButton with Round Corners"
+                Content="Đặt phòng"
+                Margin="2"
+                VerticalAlignment="Stretch"
+                HorizontalAlignment="Stretch"
+                Width="Auto"
+                Height="Auto"
+                FontSize="18"
+                Foreground="White"
+                Background="#31CA62"
+                BorderThickness="0"
+                
+            />
+            </Grid>
+        </Grid>
+
+
     </Grid>
+
 </UserControl>

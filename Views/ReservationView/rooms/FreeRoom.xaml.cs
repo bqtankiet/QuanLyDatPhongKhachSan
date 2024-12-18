@@ -1,5 +1,4 @@
-﻿using QLKS_CK.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,16 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace QLKS_CK.Views
+namespace QLKS_CK.Views.ReservationView.rooms
 {
-    public partial class MainView : Window
+    /// <summary>
+    /// Interaction logic for FreeRoom.xaml
+    /// </summary>
+    public partial class FreeRoom : UserControl
     {
-        public MainView()
+        public FreeRoom()
         {
             InitializeComponent();
-            DataContext = new MainViewModel();
         }
     }
 }
