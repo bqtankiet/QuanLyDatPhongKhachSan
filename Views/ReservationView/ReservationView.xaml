@@ -25,34 +25,36 @@
 
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <Canvas Width="115" Height="115" Margin="10">
-                                <Canvas.Style>
-                                    <Style TargetType="Canvas">
-                                        <Style.Triggers>
-                                            <Trigger Property="IsMouseOver" Value="True">
-                                                <Setter Property="Background" Value="LightGray"/>
-                                            </Trigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </Canvas.Style>
-                                <Image Source="/resource/free_room.png"
-                                   Height="90"
-                                   Width="90"
-                                   Canvas.Left="12.5"
-                                   Canvas.Top="10"/>
-                                <TextBlock Text="{Binding RoomNumber}"
-                                   FontSize="8"
-                                   Foreground="Black"
-                                   Width="115"
-                                   Canvas.Top="30"
-                                   TextAlignment="Center"/>
-                                <TextBlock Text="{Binding RoomType}"
-                                   FontSize="14"
-                                   Foreground="Black"
-                                   Width="115"
-                                   Canvas.Bottom="0"
-                                   TextAlignment="Center"/>
-                            </Canvas>
+                            <Border BorderBrush="Gray" Grid.Row="3" BorderThickness="1,1,1,1">
+                                
+                                <Canvas Width="115" Height="115" Margin="10" Cursor="Hand">
+                                    <Canvas.Style>
+                                        <Style TargetType="Canvas">
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Background" Value="LightGray"/>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Canvas.Style>
+                                    <Button 
+                                        Command="{Binding DataContext.RoomClickCommand,
+                                        RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}" 
+                                        Width="115" 
+                                        Height="115" 
+                                        Opacity="0" Panel.ZIndex="1">
+                                    </Button>
+
+                                
+                                    <Image Source="/resource/free_room.png" Height="90" Width="90" Canvas.Left="12.5" Canvas.Top="10"/>
+                                    <TextBlock Text="{Binding RoomNumber}" FontSize="8" Foreground="Black" Width="115" Canvas.Top="30" TextAlignment="Center"/>
+                                    <TextBlock Text="{Binding RoomType}" FontSize="14" Foreground="Black" Width="115" Canvas.Bottom="0" TextAlignment="Center"/>
+                                </Canvas>
+
+                            </Border>
+
+
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
@@ -85,27 +87,27 @@
                 <StackPanel Grid.Row="1" Orientation="Horizontal">
                     <TextBlock Text="Số phòng: " Margin="20,0" Foreground="#37C467"
                                FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
-                    <TextBlock Text="100 " FontSize="18" VerticalAlignment="Center"/>
+                    <TextBlock Text="{Binding SelectedRoom.RoomNumber}" FontSize="18" VerticalAlignment="Center"/>
                 </StackPanel>
                 <StackPanel Grid.Row="2" Orientation="Horizontal">
                     <TextBlock Text="Loại phòng: " Margin="20,0" Foreground="#37C467"
                                FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
-                    <TextBlock Text="Phòng đơn " FontSize="18" VerticalAlignment="Center"/>
+                    <TextBlock Text="{Binding SelectedRoom.RoomType}" FontSize="18" VerticalAlignment="Center"/>
                 </StackPanel>
                 <StackPanel Grid.Row="3" Orientation="Horizontal">
                     <TextBlock Text="Sức chứa: " Margin="20,0" Foreground="#37C467"
                                FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
-                    <TextBlock Text="2 " FontSize="18" VerticalAlignment="Center"/>
+                    <TextBlock Text="{Binding SelectedRoom.Capacity}" FontSize="18" VerticalAlignment="Center"/>
                 </StackPanel>
                 <StackPanel Grid.Row="4" Orientation="Horizontal">
                     <TextBlock Text="Giá tiền: " Margin="20,0" Foreground="#37C467"
                 FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
-                    <TextBlock Text="200.000 VND" FontSize="18" VerticalAlignment="Center"/>
+                    <TextBlock Text="{Binding SelectedRoom.Price, StringFormat='{}{0:N0} VND'}" FontSize="18" VerticalAlignment="Center"/>
                 </StackPanel>
                 <StackPanel Grid.Row="5" Orientation="Horizontal">
                     <TextBlock Text="Trạng thái: " Margin="20,0" Foreground="#37C467"
                                FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
-                    <TextBlock Text="Trống" FontSize="18" VerticalAlignment="Center"/>
+                    <TextBlock Text="{Binding SelectedRoom.Status}" FontSize="18" VerticalAlignment="Center"/>
                 </StackPanel>
 
             </Grid>
@@ -143,7 +145,7 @@
                             Foreground="Red"
                             Margin="20,0"/>
 
-                    <TextBlock Text="200000 VND"
+                    <TextBlock Text="{Binding SelectedRoom.Price, StringFormat='{}{0:N0} VND'}"
                             FontSize="22"
                             FontWeight="DemiBold"
                             FontStyle="Italic"
@@ -151,7 +153,7 @@
                             VerticalAlignment="Center"
                             TextAlignment="Center"
                             Foreground="#BD8722"
-                            Margin="50 -5 10 0"/>
+                            Margin="10 -5 10 0"/>
 
                 </StackPanel>
             </Border>
