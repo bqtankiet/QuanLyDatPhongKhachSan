@@ -15,6 +15,7 @@
     <Grid Background="#F5F5F5">
         <Grid.RowDefinitions>
             <RowDefinition Height="45"/>
+            <RowDefinition Height="45"/>
             <RowDefinition />
         </Grid.RowDefinitions>
 
@@ -43,33 +44,29 @@
             </Grid>
         </Border>
 
-        <Grid Grid.Row="1">
+        <!--  Tiêu đề  -->
+        <materialDesign:Card 
+            Margin="0,10,0,5"
+            UniformCornerRadius="6"
+            Grid.Row="1">
+            <TextBlock
+                HorizontalAlignment="Center"
+                FontSize="25"
+                FontWeight="Bold"
+                Text="HÓA ĐƠN"
+                TextAlignment="Center"/>
+        </materialDesign:Card>
+        <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="300" />
-                <ColumnDefinition Width="300" />
-                <ColumnDefinition Width="300" />
+                <ColumnDefinition Width="400" />
+                <ColumnDefinition Width="400" />
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
 
-            <!--  Hóa đơn  -->
+            <!--  Thông tin khách hàng   -->
             <Grid Margin="1,0,0,0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="50" />
-                    <RowDefinition />
-                </Grid.RowDefinitions>
-
-                <!--  Tiêu đề  -->
-                <materialDesign:Card Margin="0,10,0,5" UniformCornerRadius="6">
-                    <TextBlock
-                        HorizontalAlignment="Center"
-                        FontSize="25"
-                        FontWeight="Bold"
-                        Text="THANH TOÁN HÓA ĐƠN"
-                        TextAlignment="Center" />
-                </materialDesign:Card>
 
                 <materialDesign:Card
-                    Grid.Row="1"
                     Margin="2,10,2,5"
                     UniformCornerRadius="6">
                     <Grid>
@@ -79,10 +76,9 @@
                             <RowDefinition Height="55" />
                             <RowDefinition Height="55" />
                             <RowDefinition Height="55" />
-                            <RowDefinition Height="40" />
-                            <RowDefinition Height="40" />
+                            <RowDefinition Height="55" />
                             <RowDefinition Height="50" />
-                            <RowDefinition Height="40" />
+                            <RowDefinition Height="50" />
                             <RowDefinition />
                         </Grid.RowDefinitions>
 
@@ -114,7 +110,7 @@
 
                             <StackPanel Grid.Column="1">
                                 <TextBox
-                                    Width="170"
+                                    Width="270"
                                     Height="33"
                                     Margin="5,10,0,0"
                                     HorizontalAlignment="Left"
@@ -135,11 +131,11 @@
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Center"
                                 FontSize="18"
-                                Text="Họ và tên:" />
+                                Text=":" />
 
                             <StackPanel Grid.Column="1">
                                 <TextBox
-                                    Width="170"
+                                    Width="270"
                                     Height="33"
                                     Margin="5,10,0,0"
                                     HorizontalAlignment="Left"
@@ -149,7 +145,7 @@
                                     Text="test1" />
                             </StackPanel>
                         </Grid>
-                        
+
                         <Grid Grid.Row="3">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="120" />
@@ -165,7 +161,7 @@
 
                             <StackPanel Grid.Column="1">
                                 <TextBox
-                                    Width="170"
+                                    Width="270"
                                     Height="33"
                                     Margin="5,10,0,0"
                                     HorizontalAlignment="Left"
@@ -175,7 +171,7 @@
                                     Text="test2" />
                             </StackPanel>
                         </Grid>
-                        
+
                         <Grid Grid.Row="4">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="120" />
@@ -191,9 +187,9 @@
 
                             <StackPanel Grid.Column="1">
                                 <TextBox
-                                    Width="170"
+                                    Width="270"
                                     Height="33"
-                                    Margin="5,11,0,0"
+                                    Margin="5,10,0,0"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
                                     VerticalContentAlignment="Center"
@@ -201,7 +197,7 @@
                                     Text="test3" />
                             </StackPanel>
                         </Grid>
-                        
+
                         <Grid Grid.Row="5">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="120" />
@@ -217,9 +213,9 @@
 
                             <StackPanel Grid.Column="1">
                                 <TextBox
-                                    Width="170"
+                                    Width="270"
                                     Height="33"
-                                    Margin="5,2,0,0"
+                                    Margin="5,10,0,0"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
                                     VerticalContentAlignment="Center"
@@ -227,7 +223,7 @@
                                     Text="test4"  />
                             </StackPanel>
                         </Grid>
-                        
+
                         <Grid Grid.Row="6">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="120" />
@@ -243,9 +239,9 @@
 
                             <StackPanel Grid.Column="1">
                                 <TextBox
-                                    Width="170"
+                                    Width="270"
                                     Height="33"
-                                    Margin="5,4,0,0"
+                                    Margin="5,10,0,0"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
                                     VerticalContentAlignment="Center"
@@ -268,7 +264,7 @@
 
                             <StackPanel Grid.Column="1">
                                 <TextBox
-                                    Width="170"
+                                    Width="270"
                                     Height="33"
                                     Margin="5,10,0,0"
                                     HorizontalAlignment="Left"
@@ -293,9 +289,9 @@
 
                             <StackPanel Grid.Column="1">
                                 <TextBox
-                                    Width="170"
+                                    Width="270"
                                     Height="33"
-                                    Margin="5,5,0,0"
+                                    Margin="5,10,0,0"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
                                     VerticalContentAlignment="Center"
@@ -303,232 +299,242 @@
                                     Text="test7" />
                             </StackPanel>
                         </Grid>
-
-                        <!--  Họ và tên  --><!--
-                        <Grid Grid.Row="2" Margin="0,10,0,0">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="120" />
-                                <ColumnDefinition />
-                            </Grid.ColumnDefinitions>
-                            <TextBlock
-                                Margin="3,0,5,0"
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Center"
-                                FontSize="18"
-                                Text="Họ và tên:" />
-                            <StackPanel Grid.Column="1">
-                                --><!--  Ô nhập  Họ và tên  --><!--
-                                <TextBox
-                                Width="170"
-                                Height="33"
-                                Margin="5,0.5,0,0"
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Center"
-                                VerticalContentAlignment="Center"
-                                FontSize="18"
-                                Text="test" />
-                                <TextBlock
-                                Margin="10,0,0,0"
-                                FontSize="8.5"
-                                Foreground="red"
-                                Text="test" />
-                            </StackPanel>
-                        </Grid>
-
-                        --><!--  Email  --><!--
-                        <Grid Grid.Row="3" Margin="0,10,0,0">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="120" />
-                                <ColumnDefinition />
-                            </Grid.ColumnDefinitions>
-                            <TextBlock
-                                Margin="3,0,5,10"
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Center"
-                                FontSize="18"
-                                Text="Email:" />
-                            <StackPanel Grid.Column="1">
-                                --><!--  Ô nhập  Email  --><!--
-                                <TextBox
-                                Width="170"
-                                Height="33"
-                                Margin="5,0.5,0,0"
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Center"
-                                VerticalContentAlignment="Center"
-                                FontSize="18"
-                                Text="test" />
-                                <TextBlock
-                                    Margin="10,0,0,0"
-                                    FontSize="8.5"
-                                    Foreground="red"
-                                    Text="test" />
-                            </StackPanel>
-                        </Grid>
-
-                        --><!--  Voucher  --><!--
-                        <Grid Grid.Row="4" Margin="0,10,0,0">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="120" />
-                                <ColumnDefinition />
-                            </Grid.ColumnDefinitions>
-                            <TextBlock
-                                Margin="3,0,5,10"
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Center"
-                                FontSize="18"
-                                Text="Voucher:" />
-                            <StackPanel Grid.Column="1">
-                                --><!--  Ô nhập  Voucher  --><!--
-                                <ComboBox
-                                Width="170"
-                                Height="33"
-                                Margin="5,1,0,0"
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Center"
-                                VerticalContentAlignment="Center"
-                                FontSize="18"></ComboBox>
-                            </StackPanel>
-                        </Grid>
-
-                        --><!--  Hóa đơn  --><!--
-                        <Border
-                            Grid.Row="5"
-                            BorderBrush="Black"
-                            BorderThickness="0,0,0,1"
-                            CornerRadius="10,10,0,0">
-                            <TextBlock
-                                Margin="20,0,0,0"
-                                VerticalAlignment="Center"
-                                FontSize="25"
-                                FontWeight="Bold"
-                                Text="Hóa đơn" />
-                        </Border>
-
-
-                        --><!--  Tổng tiền  --><!--
-                        <Grid Grid.Row="6" Margin="0,8,0,0">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition />
-                                <ColumnDefinition />
-                            </Grid.ColumnDefinitions>
-
-                            <TextBlock
-                                Margin="3,0,0,0"
-                                VerticalAlignment="Center"
-                                FontSize="18"
-                                Text="Tổng tiền:" />
-                            <StackPanel
-                                Grid.Column="1"
-                                Margin="0,0,3,0"
-                                HorizontalAlignment="Right"
-                                Orientation="Horizontal">
-
-                                --><!--  Binding tổng tiền  --><!--
-                                <TextBlock
-                                    Margin="18,0,0,0"
-                                    VerticalAlignment="Center"
-                                    FontSize="18"
-                                    FontWeight="SemiBold"
-                                    Text="" />
-
-                                --><!--  Đơn vị đồng  --><!--
-                                <TextBlock
-                                    VerticalAlignment="Center"
-                                    FontSize="18"
-                                    FontWeight="SemiBold"
-                                    Text=" đ" />                
-                            </StackPanel>
-                        </Grid>
-
-                        <Grid Grid.Row="7">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition />
-                                <ColumnDefinition />
-                            </Grid.ColumnDefinitions>
-
-                            <TextBlock
-                                Margin="3,0,0,0"
-                                VerticalAlignment="Center"
-                                FontSize="18"
-                                Text="Khuyến mãi:" />
-                            <StackPanel Grid.Column="1" VerticalAlignment="Bottom">
-                                <StackPanel
-                                    Margin="0,0,3,0"
-                                    HorizontalAlignment="Right"
-                                    Orientation="Horizontal">
-
-                                    --><!--  Binding khuyến mãi  --><!--
-                                    <TextBox
-                                        Width="120"
-                                        Height="30"
-                                        Margin="18,0,0,0"
-                                        VerticalAlignment="Center"
-                                        HorizontalContentAlignment="Right"
-                                        FontSize="18"
-                                        FontWeight="SemiBold"
-                                        Text="test" />
-
-                                    --><!--  Đơn vị đồng  --><!--
-                                    <TextBlock
-                                        VerticalAlignment="Center"
-                                        FontSize="18"
-                                        FontWeight="SemiBold"
-                                        Text=" đ" />            
-                                </StackPanel>
-
-                                --><!--  Báo lỗi  -->
-                                <!--không dùng nữa--><!--
-                                <TextBlock
-                                    Margin="12,0,0,0"
-                                    FontSize="8.5"
-                                    Foreground="Red"
-                                    Text="" />  
-                            </StackPanel>
-
-                        </Grid>
-
-                        <Grid Grid.Row="8">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition />
-                                <ColumnDefinition />
-                            </Grid.ColumnDefinitions>
-
-                            <TextBlock
-                                Margin="3,0,0,0"
-                                VerticalAlignment="Center"
-                                FontSize="18"
-                                Text="Tổng thanh toán:" />
-                            <StackPanel
-                                Grid.Column="1"
-                                Margin="0,0,3,0"
-                                HorizontalAlignment="Right"
-                                Orientation="Horizontal">
-
-                                --><!--  Binding tồng thanh toán  --><!--
-                                <TextBlock
-                                    Margin="18,0,0,0"
-                                    VerticalAlignment="Center"
-                                    FontSize="18"
-                                    FontWeight="SemiBold"
-                                    Text="test" />
-
-                                --><!--  Đơn vị đồng  --><!--
-                                <TextBlock
-                                    VerticalAlignment="Center"
-                                    FontSize="18"
-                                    FontWeight="SemiBold"
-                                    Text=" đ" />
-                            </StackPanel>
-                        </Grid>-->
-
-              
                     </Grid>
                 </materialDesign:Card>
             </Grid>
+
+            <!-- Thông tin phòng -->
+            <materialDesign:Card
+                Grid.Column="1"
+                Margin="5,10,0,5"
+                UniformCornerRadius="6">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="55" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <Border
+                        BorderBrush="Black"
+                        BorderThickness="0,0,0,1"
+                        CornerRadius="10,10,0,0">
+                        <TextBlock
+                            Margin="20,0,0,0"
+                            VerticalAlignment="Center"
+                            FontSize="25"
+                            FontWeight="Bold"
+                            Text="Thông tin phòng" />
+                    </Border>
+
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+                        <!--  Tên phim  -->
+                        <TextBlock
+                            Margin="3,0,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            FontSize="18"
+                            Text="Số phòng:" />
+                        <!--  Binding tên phim  -->
+                        <TextBlock
+                            Grid.Column="1"
+                            Margin="0,0,2,0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            FontSize="18"
+                            FontWeight="SemiBold"
+                            Text="test" />
+                    </Grid>
+
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock
+                            Margin="3,0,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            FontSize="18"
+                            Text="Loại phòng:"/>
+
+                        <TextBlock
+                            Grid.Column="1"
+                            Margin="0,0,2,0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            FontSize="18"
+                            FontWeight="SemiBold"
+                            Text="test" />
+                    </Grid>
+
+                    <Grid Grid.Row="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock
+                            Margin="3,0,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            FontSize="18"
+                            Text="Sức chứa:" />
+                        <TextBlock
+                            Grid.Column="1"
+                            Margin="0,0,2,0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            FontSize="18"
+                            FontWeight="SemiBold"
+                            Text="test" />
+                    </Grid>
+
+                    <Grid Grid.Row="4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock
+                            Margin="3,0,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            FontSize="18"
+                            Text="Giá tiền:" />
+
+                        <TextBlock
+                            Grid.Column="1"
+                            Margin="0,0,2,0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            FontSize="18"
+                            FontWeight="SemiBold"
+                            Text="100000" />
+                    </Grid>
+
+                    <Border
+                        Grid.Row="5"
+                        BorderBrush="Black"
+                        BorderThickness="0,1,0,1">
+                        <TextBlock
+                            Margin="20,0,0,0"
+                            VerticalAlignment="Center"
+                            FontSize="20"
+                            FontWeight="Bold"
+                            Text="Dịch vụ" />
+                    </Border>
+
+                    <Grid Grid.Row ="7">
+
+                    </Grid>
+                </Grid>
+
+            </materialDesign:Card>
+
+            <materialDesign:Card
+                Grid.Column="3"
+                Margin="5,10,0,5"
+                UniformCornerRadius="6">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="55"/>
+                        <RowDefinition Height="160"/>
+                        <RowDefinition Height="40" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Border
+                        BorderBrush="Black"
+                        BorderThickness="0,0,0,1"
+                        CornerRadius="10,10,0,0">
+                        <TextBlock
+                            Margin="20,0,0,0"
+                            VerticalAlignment="Center"
+                            FontSize="25"
+                            FontWeight="Bold"
+                            Text="Ghi chú" />
+                    </Border>
+                    <TextBox 
+                        Grid.Row="1"
+                        AcceptsReturn="True"
+                        VerticalScrollBarVisibility="Auto"
+                        HorizontalScrollBarVisibility="Auto"
+                        TextWrapping="Wrap"
+                        materialDesign:HintAssist.Hint="Ghi chú"
+                        BorderBrush="Black"
+                        FontSize="18"
+                        FontWeight="Light"
+                        Foreground="Black"
+                        Height="140"
+                        Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                        Width="300"/>
+
+                    <Border
+                        Grid.Row="2"
+                        BorderBrush="Black"
+                        BorderThickness="0,1,0,1">
+                        <TextBlock
+                            Margin="20,0,0,0"
+                            VerticalAlignment="Center"
+                            FontSize="20"
+                            FontWeight="Bold"
+                            Text="Thanh toán" />
+                    </Border>
+
+                    <Grid Grid.Row="3">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+                        <StackPanel Grid.Row="0" Orientation="Horizontal">
+                            <TextBlock Text="Tổng tiền: " Margin="20,0" Foreground="Black"
+                                Width="100" FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
+                            <TextBlock Text="20" FontSize="18" VerticalAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel Grid.Row="1" Orientation="Horizontal">
+                            <TextBlock Text="Khách đưa: " Margin="20,0" Foreground="Black"
+                                Width="100" FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
+                            <TextBlock Text="20" FontSize="18" VerticalAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel Grid.Row="2" Orientation="Horizontal">
+                            <TextBlock Text="Phải trả: " Margin="20,0" Foreground="Black"
+                                Width="100" FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
+                            <TextBlock Text="20" FontSize="18" VerticalAlignment="Center"/>
+                        </StackPanel>
+                        <Grid Grid.Row="4">
+                            <Button Style="{StaticResource MaterialDesignRaisedButton}"
+                                ToolTip="MaterialDesignRaisedButton with Round Corners"
+                                Content="Thanh toán"
+                                Margin="2"
+                                VerticalAlignment="Stretch"
+                                HorizontalAlignment="Stretch"
+                                Width="Auto"
+                                Height="Auto"
+                                FontSize="18"
+                                Command="{Binding ContinueCommand}"
+                                Foreground="White"
+                                Background="#31CA62"
+                                BorderThickness="0"/>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </materialDesign:Card>
         </Grid>
-        
-        
-     </Grid>
+
+
+    </Grid>
 
 </Window>

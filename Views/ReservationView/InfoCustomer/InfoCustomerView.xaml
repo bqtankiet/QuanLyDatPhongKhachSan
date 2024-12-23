@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QLKS_CK.Views.ReservationView.InfoCustomer"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:infocustomerviewmodel="clr-namespace:QLKS_CK.ViewModels.Reservation.InfoCustomerViewModel" d:DataContext="{d:DesignInstance Type=infocustomerviewmodel:InfoCustomerViewModel}"
         mc:Ignorable="d"
         Title="InfoCustomerView" Width="550"
         Height="450"
@@ -302,7 +303,7 @@
                     materialDesign:ButtonAssist.CornerRadius="20"
                     Background="#31CA62"
                     Content="Xác nhận" 
-                    
+                    Command="{Binding ConfirmCommand}"
                     />
             </Grid>
         </Grid>

@@ -5,7 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:QLKS_CK.Views.ReservationView"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-             xmlns:reservation="clr-namespace:QLKS_CK.ViewModels.Reservation" d:DataContext="{d:DesignInstance Type=reservation:ReservationViewModel}"
+             xmlns:reservation="clr-namespace:QLKS_CK.ViewModels.Reservation"
+             d:DataContext="{d:DesignInstance Type=reservation:ReservationViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="648" d:DesignWidth="1000">
     <Grid Background="#F5F5F5">
@@ -13,7 +14,6 @@
             <ColumnDefinition Width ="7*"/>
             <ColumnDefinition Width ="3*"/>
         </Grid.ColumnDefinitions>
-
 
         <Grid Grid.Column ="0">
             <ScrollViewer VerticalScrollBarVisibility="Auto">
@@ -46,20 +46,16 @@
                                         Height="115" 
                                         Opacity="0" Panel.ZIndex="1">
                                     </Button>
-
                                 
                                     <Image Source="/resource/free_room.png" Height="90" Width="90" Canvas.Left="12.5" Canvas.Top="10"/>
                                     <TextBlock Text="{Binding RoomNumber}" FontSize="8" Foreground="Black" Width="115" Canvas.Top="30" TextAlignment="Center"/>
                                     <TextBlock Text="{Binding RoomType}" FontSize="14" Foreground="Black" Width="115" Canvas.Bottom="0" TextAlignment="Center"/>
                                 </Canvas>
-
                             </Border>
-
 
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
-
             </ScrollViewer>
 
         </Grid>
@@ -110,7 +106,6 @@
                                FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
                     <TextBlock Text="{Binding SelectedRoom.Status}" FontSize="18" VerticalAlignment="Center"/>
                 </StackPanel>
-
             </Grid>
             
             <Border BorderBrush="Gray" BorderThickness="0,1,0,1" />
@@ -175,11 +170,6 @@
                         Background="#31CA62"
                         BorderThickness="0"/>
             </Grid>
-
-            
         </Grid>
-
-
     </Grid>
-
 </UserControl>
