@@ -4,7 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:QLKS_CK.Views.ReservationView"
-             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:reservation="clr-namespace:QLKS_CK.ViewModels.Reservation" d:DataContext="{d:DesignInstance Type=reservation:ReservationViewModel}"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:reservation="clr-namespace:QLKS_CK.ViewModels.Reservation" d:DataContext="{d:DesignInstance Type=reservation:ReservationViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="648" d:DesignWidth="1000">
     <Grid Background="#F5F5F5">
@@ -157,23 +158,25 @@
 
                 </StackPanel>
             </Border>
-            
+
+            <!-- Nút đặt phòng -->
             <Grid Grid.Row="4">
                 <Button Style="{StaticResource MaterialDesignRaisedButton}"
-                ToolTip="MaterialDesignRaisedButton with Round Corners"
-                Content="Đặt phòng"
-                Margin="2"
-                VerticalAlignment="Stretch"
-                HorizontalAlignment="Stretch"
-                Width="Auto"
-                Height="Auto"
-                FontSize="18"
-                Foreground="White"
-                Background="#31CA62"
-                BorderThickness="0"
-                
-            />
+                        ToolTip="MaterialDesignRaisedButton with Round Corners"
+                        Content="Tiếp tục"
+                        Margin="2"
+                        VerticalAlignment="Stretch"
+                        HorizontalAlignment="Stretch"
+                        Width="Auto"
+                        Height="Auto"
+                        FontSize="18"
+                        Command="{Binding ContinueCommand}"
+                        Foreground="White"
+                        Background="#31CA62"
+                        BorderThickness="0"/>
             </Grid>
+
+            
         </Grid>
 
 

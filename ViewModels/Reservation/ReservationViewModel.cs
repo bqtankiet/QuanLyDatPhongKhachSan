@@ -1,5 +1,6 @@
 ﻿using QLKS_CK.Models;
 using QLKS_CK.Views.ReservationView;
+using QLKS_CK.Views.ReservationView.InfoCustomer;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -25,6 +26,7 @@ namespace QLKS_CK.ViewModels.Reservation
         }
 
         public ICommand RoomClickCommand { get; set; }
+        public ICommand ContinueCommand { get; set; }
 
         private ObservableCollection<Room> roomList;
         public ObservableCollection<Room> RoomList
@@ -40,6 +42,13 @@ namespace QLKS_CK.ViewModels.Reservation
             this.reservationView = reservationView;
 
             RoomClickCommand = new RelayCommand(RoomClick);
+            ContinueCommand = new RelayCommand(OpenCustomerInfoWindow);
+        }
+
+        private void OpenCustomerInfoWindow(object obj)
+        {
+            var infoCustomerWindow = new InfoCustomerView();
+            infoCustomerWindow.Show();
         }
 
         private void RoomClick(object obj)
@@ -73,10 +82,7 @@ namespace QLKS_CK.ViewModels.Reservation
             RoomList.Add(new Room() { Id = 17, RoomNumber = "117", RoomType = "Phòng vip", Price = 22000000, Capacity = "2", Status = "Trống" });
             RoomList.Add(new Room() { Id = 18, RoomNumber = "118", RoomType = "Phòng đôi", Price = 160000, Capacity = "2", Status = "Trống" });
             RoomList.Add(new Room() { Id = 19, RoomNumber = "119", RoomType = "Phòng đơn", Price = 95000, Capacity = "1", Status = "Đã đặt" });
-            RoomList.Add(new Room() { Id = 20, RoomNumber = "120", RoomType = "Phòng vip", Price = 22000000, Capacity = "2", Status = "Trống" });
-            RoomList.Add(new Room() { Id = 21, RoomNumber = "121", RoomType = "Phòng đôi", Price = 160000, Capacity = "2", Status = "Trống" });
-            RoomList.Add(new Room() { Id = 22, RoomNumber = "122", RoomType = "Phòng đơn", Price = 95000, Capacity = "1", Status = "Đã đặt" });
-            RoomList.Add(new Room() { Id = 23, RoomNumber = "123", RoomType = "Phòng gia đình", Price = 750000, Capacity = "4", Status = "Trống" });
+            RoomList.Add(new Room() { Id = 20, RoomNumber = "120", RoomType = "Phòng gia đình", Price = 750000, Capacity = "4", Status = "Trống" });
 
         }
 
