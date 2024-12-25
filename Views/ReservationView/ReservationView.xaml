@@ -90,17 +90,17 @@
                                         <Style TargetType="Canvas">
                                             <Style.Triggers>
                                                 <!-- Nếu trạng thái là Trống -->
-                                                <DataTrigger Binding="{Binding Status}" Value="Trống">
+                                                <DataTrigger Binding="{Binding RoomStatus}" Value="Trống">
                                                     <Setter Property="Background" Value="LightGreen"/>
                                                 </DataTrigger>
 
                                                 <!-- Nếu trạng thái là Đã đặt -->
-                                                <DataTrigger Binding="{Binding Status}" Value="Đã đặt">
+                                                <DataTrigger Binding="{Binding RoomStatus}" Value="Đã đặt">
                                                     <Setter Property="Background" Value="LightCoral"/>
                                                 </DataTrigger>
 
                                                 <!-- Nếu trạng thái là Đang sửa chữa -->
-                                                <DataTrigger Binding="{Binding Status}" Value="Đang sửa chữa">
+                                                <DataTrigger Binding="{Binding RoomStatus}" Value="Đang sửa chữa">
                                                     <Setter Property="Background" Value="Gray"/>
                                                 </DataTrigger>
                                             </Style.Triggers>
@@ -198,7 +198,7 @@
                             VerticalAlignment="Center"
                             Foreground="Red"
                             Margin="20,0"/>
-                    <TextBlock Text="{Binding Price, StringFormat='{}{0:N0} VND'}"
+                    <TextBlock Text="{Binding SelectedRoom.Price, StringFormat='{}{0:N0} VND'}"
                             FontSize="22"
                             FontWeight="DemiBold"
                             FontStyle="Italic"
@@ -213,7 +213,7 @@
             <Grid Grid.Row="4">
                 <Button Style="{StaticResource MaterialDesignRaisedButton}"
                         ToolTip="MaterialDesignRaisedButton with Round Corners"
-                        Content="Tiếp tục"
+                        Content="Đặt phòng"
                         Margin="2"
                         VerticalAlignment="Stretch"
                         HorizontalAlignment="Stretch"

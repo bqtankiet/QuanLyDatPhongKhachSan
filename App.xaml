@@ -13,7 +13,6 @@
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesign3.Defaults.xaml" />
             </ResourceDictionary.MergedDictionaries>
             
-            <share:SharedViewModel x:Key="SharedViewModel" />
         </ResourceDictionary>
 
     </Application.Resources>

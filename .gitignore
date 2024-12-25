@@ -27,3 +27,6 @@ obj/
 *.g.resources
 *.baml
 *.csproj.FileListAbsolute.txt
+
+app.config
+

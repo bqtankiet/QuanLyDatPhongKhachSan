@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5f7a7dbeddec45c8a63ccbeb1b85f924" Name="Diagram1">
+        <EntityTypeShape EntityType="QuanLyKhachSanModel.Customer" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyKhachSanModel.Hotel" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyKhachSanModel.Reservation" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyKhachSanModel.Room" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyKhachSanModel.ServiceList" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyKhachSanModel.ServiceUsage" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyKhachSanModel.User" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="QuanLyKhachSanModel.FK__Reservati__Custo__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyKhachSanModel.FK__Reservati__RoomI__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyKhachSanModel.FK__ServiceUs__Reser__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyKhachSanModel.FK__ServiceUs__Servi__4AB81AF0" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
