@@ -1,20 +1,16 @@
 ﻿using QLKS_CK.Models;
-using QLKS_CK.Views.ReservationView;
-using QLKS_CK.Views.ReservationView.InfoCustomer;
-using System;
-using System.Collections.Generic;
+using QLKS_CK.Views.BillView;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace QLKS_CK.ViewModels.Reservation
 {
     public class ReservationViewModel : BaseViewModel
     {
-        private Room selectedRoom;
+        private readonly SharedViewModel _sharedViewModel;
 
+        private Room selectedRoom;
         public Room SelectedRoom
         {
             get { return selectedRoom; }
@@ -26,7 +22,7 @@ namespace QLKS_CK.ViewModels.Reservation
         }
 
         public ICommand RoomClickCommand { get; set; }
-        public ICommand ContinueCommand { get; set; }
+        public ICommand ConfirmCommand { get; set; }
 
         private ObservableCollection<Room> roomList;
         public ObservableCollection<Room> RoomList
@@ -34,31 +30,35 @@ namespace QLKS_CK.ViewModels.Reservation
             get { return roomList; }
             set { roomList = value; OnPropertyChanged(); }
         }
-
-        ReservationView reservationView;
-        public ReservationViewModel(ReservationView reservationView)
+        public ReservationViewModel(SharedViewModel sharedViewModel)
         {
+            _sharedViewModel = sharedViewModel;
             LoadData();
-            this.reservationView = reservationView;
-
             RoomClickCommand = new RelayCommand(RoomClick);
-            ContinueCommand = new RelayCommand(OpenCustomerInfoWindow);
+            ConfirmCommand = new RelayCommand(OpenBillView);
         }
 
-        private void OpenCustomerInfoWindow(object obj)
+        private void OpenBillView(object obj)
         {
-            var infoCustomerWindow = new InfoCustomerView();
-            infoCustomerWindow.Show();
+            var billView = new BillView(_sharedViewModel);
+            billView.Show();
         }
+
 
         private void RoomClick(object obj)
         {
             var clickedRoom = obj as Room;
-            if (clickedRoom != null)
+            if (clickedRoom != null && clickedRoom.Status == "Trống")
             {
-                SelectedRoom = clickedRoom;
+                _sharedViewModel.SelectedRoom = clickedRoom; 
+                SelectedRoom = clickedRoom; 
+            }
+            else
+            {
+                MessageBox.Show("Phòng đã được đặt hoặc đang sử dụng", "Thông báo!");
             }
         }
+
 
         private void LoadData()
         {
@@ -83,8 +83,6 @@ namespace QLKS_CK.ViewModels.Reservation
             RoomList.Add(new Room() { Id = 18, RoomNumber = "118", RoomType = "Phòng đôi", Price = 160000, Capacity = "2", Status = "Trống" });
             RoomList.Add(new Room() { Id = 19, RoomNumber = "119", RoomType = "Phòng đơn", Price = 95000, Capacity = "1", Status = "Đã đặt" });
             RoomList.Add(new Room() { Id = 20, RoomNumber = "120", RoomType = "Phòng gia đình", Price = 750000, Capacity = "4", Status = "Trống" });
-
         }
-
     }
 }

@@ -15,40 +15,14 @@
     <Grid Background="#F5F5F5">
         <Grid.RowDefinitions>
             <RowDefinition Height="45"/>
-            <RowDefinition Height="45"/>
             <RowDefinition />
         </Grid.RowDefinitions>
-
-        <!-- Button back -->
-        <Border BorderBrush="Black" BorderThickness="0,0,0,0.5">
-            <Grid>
-                <Button
-                    Width="40"
-                    Height="35"
-                    HorizontalAlignment="Left"
-                    Background="Transparent">
-                    <Button.Template>
-                        <ControlTemplate>
-                            <Border>
-                                <materialDesign:PackIcon
-                                    Width="30"
-                                    Height="30"
-                                    Margin="2,0,0,0"
-                                    VerticalAlignment="Center"
-                                    Foreground="Black"
-                                    Kind="ArrowLeft" />
-                            </Border>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
-            </Grid>
-        </Border>
 
         <!--  Tiêu đề  -->
         <materialDesign:Card 
             Margin="0,10,0,5"
             UniformCornerRadius="6"
-            Grid.Row="1">
+            Grid.Row="0">
             <TextBlock
                 HorizontalAlignment="Center"
                 FontSize="25"
@@ -56,7 +30,7 @@
                 Text="HÓA ĐƠN"
                 TextAlignment="Center"/>
         </materialDesign:Card>
-        <Grid Grid.Row="2">
+        <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="400" />
                 <ColumnDefinition Width="400" />
@@ -79,7 +53,7 @@
                             <RowDefinition Height="55" />
                             <RowDefinition Height="50" />
                             <RowDefinition Height="50" />
-                            <RowDefinition />
+                            <RowDefinition Height="50" />
                         </Grid.RowDefinitions>
 
                         <!--  Thông tin khách hàng  -->
@@ -116,8 +90,7 @@
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
                                     VerticalContentAlignment="Center"
-                                    FontSize="18"
-                                    Text="test" />
+                                    FontSize="18"/>
                             </StackPanel>
                         </Grid>
                         <Grid Grid.Row="2">
@@ -131,7 +104,7 @@
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Center"
                                 FontSize="18"
-                                Text=":" />
+                                Text="SĐT:" />
 
                             <StackPanel Grid.Column="1">
                                 <TextBox
@@ -141,8 +114,7 @@
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
                                     VerticalContentAlignment="Center"
-                                    FontSize="18"
-                                    Text="test1" />
+                                    FontSize="18" />
                             </StackPanel>
                         </Grid>
 
@@ -167,11 +139,10 @@
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
                                     VerticalContentAlignment="Center"
-                                    FontSize="18"
-                                    Text="test2" />
+                                    FontSize="18"/>
                             </StackPanel>
                         </Grid>
-
+                        
                         <Grid Grid.Row="4">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="120" />
@@ -183,7 +154,7 @@
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Center"
                                 FontSize="18"
-                                Text="Email: " />
+                                Text="Email:" />
 
                             <StackPanel Grid.Column="1">
                                 <TextBox
@@ -193,10 +164,11 @@
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
                                     VerticalContentAlignment="Center"
-                                    FontSize="18"
-                                    Text="test3" />
+                                    FontSize="18" />
                             </StackPanel>
                         </Grid>
+
+                        
 
                         <Grid Grid.Row="5">
                             <Grid.ColumnDefinitions>
@@ -219,8 +191,7 @@
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
                                     VerticalContentAlignment="Center"
-                                    FontSize="18"
-                                    Text="test4"  />
+                                    FontSize="18" />
                             </StackPanel>
                         </Grid>
 
@@ -239,14 +210,14 @@
 
                             <StackPanel Grid.Column="1">
                                 <TextBox
+                                    x:Name="GenderTextBlock"
                                     Width="270"
                                     Height="33"
                                     Margin="5,10,0,0"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
                                     VerticalContentAlignment="Center"
-                                    FontSize="18"
-                                    Text="test5" />
+                                    FontSize="18" />
                             </StackPanel>
                         </Grid>
                         <Grid Grid.Row="7">
@@ -263,15 +234,14 @@
                                 Text="Ngày đặt:" />
 
                             <StackPanel Grid.Column="1">
-                                <TextBox
+                                <DatePicker
                                     Width="270"
                                     Height="33"
-                                    Margin="5,10,0,0"
+                                    Margin="5,7,0,0"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
                                     VerticalContentAlignment="Center"
-                                    FontSize="18"
-                                    Text="test6" />
+                                    FontSize="18"/>
                             </StackPanel>
                         </Grid>
                         <Grid Grid.Row="8">
@@ -288,15 +258,14 @@
                                 Text="Ngày trả:" />
 
                             <StackPanel Grid.Column="1">
-                                <TextBox
+                                <DatePicker
                                     Width="270"
                                     Height="33"
-                                    Margin="5,10,0,0"
+                                    Margin="5,7,0,0"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
                                     VerticalContentAlignment="Center"
-                                    FontSize="18"
-                                    Text="test7" />
+                                    FontSize="18"/>     
                             </StackPanel>
                         </Grid>
                     </Grid>
@@ -337,14 +306,13 @@
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
 
-                        <!--  Tên phim  -->
                         <TextBlock
                             Margin="3,0,0,0"
                             HorizontalAlignment="Left"
                             VerticalAlignment="Center"
                             FontSize="18"
                             Text="Số phòng:" />
-                        <!--  Binding tên phim  -->
+                        
                         <TextBlock
                             Grid.Column="1"
                             Margin="0,0,2,0"
@@ -352,7 +320,7 @@
                             VerticalAlignment="Center"
                             FontSize="18"
                             FontWeight="SemiBold"
-                            Text="test" />
+                            Text="{Binding SelectedRoom.RoomNumber}" />
                     </Grid>
 
                     <Grid Grid.Row="2">
@@ -375,7 +343,7 @@
                             VerticalAlignment="Center"
                             FontSize="18"
                             FontWeight="SemiBold"
-                            Text="test" />
+                            Text="{Binding SelectedRoom.RoomType}" />
                     </Grid>
 
                     <Grid Grid.Row="3">
@@ -397,7 +365,7 @@
                             VerticalAlignment="Center"
                             FontSize="18"
                             FontWeight="SemiBold"
-                            Text="test" />
+                            Text="{Binding SelectedRoom.Capacity}" />
                     </Grid>
 
                     <Grid Grid.Row="4">
@@ -420,7 +388,7 @@
                             VerticalAlignment="Center"
                             FontSize="18"
                             FontWeight="SemiBold"
-                            Text="100000" />
+                            Text="{Binding SelectedRoom.Price}" />
                     </Grid>
 
                     <Border
@@ -435,8 +403,9 @@
                             Text="Dịch vụ" />
                     </Border>
 
-                    <Grid Grid.Row ="7">
-
+                    <!-- Dịch vụ -->
+                    <Grid Grid.Row ="6">
+                        
                     </Grid>
                 </Grid>
 
@@ -524,7 +493,7 @@
                                 Width="Auto"
                                 Height="Auto"
                                 FontSize="18"
-                                Command="{Binding ContinueCommand}"
+                                Command=""
                                 Foreground="White"
                                 Background="#31CA62"
                                 BorderThickness="0"/>
