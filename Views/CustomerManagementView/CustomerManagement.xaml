@@ -1,0 +1,79 @@
+﻿<Window x:Class="project_v3.Views.CustomerManagement"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:project_v3.Views"
+        mc:Ignorable="d"
+        Title="CustomerManagement" Height="450" Width="800">
+   
+    <Grid>
+        <!-- DataGrid hiển thị danh sách khách hàng -->
+        <Grid Margin="20" Background="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <!-- Bảng khách hàng -->
+                <RowDefinition Height="Auto" />
+                <!-- Nút thêm khách hàng -->
+            </Grid.RowDefinitions>
+
+            <!-- Bảng hiển thị danh sách khách hàng -->
+            <DataGrid Name="CustomerGrid" 
+              AutoGenerateColumns="False" 
+              Margin="10" 
+              IsReadOnly="True" 
+              ItemsSource="{Binding Customers}" 
+              Grid.Row="0" 
+              AlternatingRowBackground="#F0F0F0" 
+              RowBackground="White" 
+              BorderBrush="#D6D6D6" 
+              BorderThickness="1" 
+              HeadersVisibility="Column"
+              VerticalScrollBarVisibility="Auto">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="Auto" MinWidth="50" />
+                    <DataGridTextColumn Header="Họ tên" Binding="{Binding FullName}" Width="*" />
+                    <DataGridTextColumn Header="CCCD" Binding="{Binding IdCardNumber}" Width="150" />
+                    <DataGridTextColumn Header="Số điện thoại" Binding="{Binding Phone}" Width="150" />
+                    <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="200" />
+                    <DataGridTextColumn Header="Địa chỉ" Binding="{Binding Address}" Width="200" />
+                    <DataGridTextColumn Header="Giới tính" Binding="{Binding Gender}" Width="100" />
+
+                    <!-- Cột chứa các nút Sửa, Xóa và Lịch sử -->
+                    <DataGridTemplateColumn Header="Thao tác" Width="200">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Button Content="Sửa" Width="60" Margin="2" 
+                                    Click="EditCustomerButton_Click" 
+                                     
+                                    Tag="{Binding}" />
+                                    <Button Content="Xóa" Width="60" Margin="2" 
+                                    Click="DeleteCustomerButton_Click" 
+                                   
+                                    Tag="{Binding}" />
+                                    <Button Content="Lịch sử" Width="80" Margin="2" 
+                                    Click="ViewHistoryButton_Click" 
+                                    
+                                    Tag="{Binding Id}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <!-- Nút Thêm khách hàng -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10" Grid.Row="1">
+                <Button Content="Thêm khách hàng" 
+                Width="150" 
+                Height="40" 
+                HorizontalAlignment="Right" 
+                Margin="5" 
+                 
+                Click="AddCustomerButton_Click" />
+            </StackPanel>
+        </Grid>
+
+    </Grid>
+</Window>

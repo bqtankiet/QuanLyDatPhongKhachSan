@@ -1,0 +1,39 @@
+﻿<Window x:Class="project_v3.Views.HistoryBooking"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:project_v3.Views"
+        mc:Ignorable="d"
+        Title="HistoryBooking" Height="450" Width="800">
+    <Grid>
+        <DataGrid Name="ReservationDataGrid" 
+          AutoGenerateColumns="False" 
+          Margin="10" 
+          IsReadOnly="True" 
+          HeadersVisibility="Column" 
+          GridLinesVisibility="All"
+          BorderBrush="#D6D6D6" 
+          BorderThickness="1" 
+          RowBackground="#F9F9F9" 
+          AlternatingRowBackground="#FFFFFF" 
+          HorizontalGridLinesBrush="#E0E0E0" 
+          VerticalGridLinesBrush="#E0E0E0" 
+          >
+
+            <!-- Cột -->
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID Đặt phòng" Binding="{Binding ReservationId}" Width="Auto"/>
+                <DataGridTextColumn Header="ID Khách hàng" Binding="{Binding CustomerId}" Width="Auto"/>
+                <DataGridTextColumn Header="Ngày đặt" Binding="{Binding ReservationDate}" Width="Auto"/>
+                <DataGridTextColumn Header="Ngày nhận phòng" Binding="{Binding CheckInDay}" Width="Auto"/>
+                <DataGridTextColumn Header="Trạng thái trả phòng" Binding="{Binding CheckOutDay}" Width="Auto"/>
+                <DataGridTextColumn Header="Phương thức thanh toán" Binding="{Binding PaymentMethod}" Width="Auto"/>
+                <DataGridTextColumn Header="Số Phòng" Binding="{Binding RoomNumber}" Width="Auto"/>
+                <DataGridTextColumn Header="Loại Phòng" Binding="{Binding RoomType}" Width="Auto"/>
+                <DataGridTextColumn Header="Giá Phòng" Binding="{Binding Price}" Width="Auto" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>
