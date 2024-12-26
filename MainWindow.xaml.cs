@@ -1,5 +1,6 @@
 ﻿using QLKS_CK.ViewModels;
 using QLKS_CK.Views;
+using QLKS_CK.Bqtankiet.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +27,9 @@ namespace QLKS_CK
         {
             InitializeComponent();
             //this.DataContext = new MainViewModel();
-            MainView q = new MainView();
+
+            //MainView q = new MainView();
+            AAAView q = new AAAView();
             q.Show();
             this.Close();
         }
